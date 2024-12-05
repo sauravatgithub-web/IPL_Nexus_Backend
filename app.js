@@ -13,7 +13,7 @@ dotenv.config({
 })
 
 const corsOptions = {
-    origin: [ "http://localhost:3000", "https://api.jdoodle.com/v1/execute", process.env.CLIENT_URL],
+    origin: [ "http://localhost:3000", "https://api.jdoodle.com/v1/execute", process.env.CLIENT_URL, "https://ipl-nexus-front-end.vercel.app"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
 }
