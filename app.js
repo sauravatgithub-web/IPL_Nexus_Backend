@@ -8,15 +8,16 @@ import userRoute from './routers/userRouter.js';
 import productRoute from './routers/productRouter.js'
 import { errorMiddleware } from './middlewares/error.js';
 
+dotenv.config({
+    path: "./config.env",
+})
+
 const corsOptions = {
     origin: [ "http://localhost:3000", "https://api.jdoodle.com/v1/execute", process.env.CLIENT_URL],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
 }
 
-dotenv.config({
-    path: "./config.env",
-})
 
 const mongoURI = process.env.MONGO_URI;
 const port = process.env.PORT || 4173;
