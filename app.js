@@ -9,7 +9,7 @@ import productRoute from './routers/productRouter.js'
 import { errorMiddleware } from './middlewares/error.js';
 
 const corsOptions = {
-    origin: [ "http://localhost:3000", "https://api.jdoodle.com/v1/execute"],
+    origin: [ "http://localhost:3000", "https://api.jdoodle.com/v1/execute", process.env.CLIENT_URL],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
 }
