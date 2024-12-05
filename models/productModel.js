@@ -9,11 +9,12 @@ const productSchema = new mongoose.Schema({
     type: String,
   },
   price: {
-    type: [String],
+    type: String,
     required: [true, 'Please provide tags']
   },
   quantity: {
-    type: [Number],
+    type: Number,
+    default: 1
   },
 });
 

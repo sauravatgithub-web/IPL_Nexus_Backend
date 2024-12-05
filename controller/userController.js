@@ -162,6 +162,18 @@ const logOut = tryCatch(async(req, res) => {
       });
 });
 
+const updateCart = tryCatch(async(req, res, next) => {
+  const { userId, cart } = req.body;
+  console.log(cart);
+  const user = await User.findById(userId);
+  if(!user) return next(new ErrorHandler("Incorrect user id for adding to cart..", 404));
+
+  user.cart = cart;
+  await user.save();
+
+  return res.status(200).json({ success: true, message: "Cart updated successfully" });
+})
+
 export { 
   newUser, 
   login, 
@@ -173,4 +185,5 @@ export {
   confirmOTP,
   uploadUserPhoto, 
   resizeUserPhoto,
+  updateCart
 }

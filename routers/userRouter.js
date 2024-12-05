@@ -10,6 +10,7 @@ import {
     logOut,
     uploadUserPhoto,
     resizeUserPhoto,
+    updateCart
 } from '../controller/userController.js'
 import { isAuthenticated } from '../middlewares/auth.js';
 import { otpValidator, validate } from '../lib/validator.js';
@@ -30,5 +31,6 @@ router.post('/setPassword', setNewPassword);
 router.use(isAuthenticated); 
 router.get("/me", getMyProfile);
 router.get("/logOut", logOut);
+router.put("/updateCart", updateCart);
 
 export default router;
